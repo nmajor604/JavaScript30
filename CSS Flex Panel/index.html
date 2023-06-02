@@ -34,8 +34,8 @@
       background: #6B0F9C;
       /* box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1); */
       color: white;
-      text-align: center;
-      align-items: center;
+      text-align: right;
+      align-items: flex-end;
       /* Safari transitionend event.propertyName === flex */
       /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
@@ -46,7 +46,7 @@
       background-size: cover;
       background-position: center;
       flex: 1;
-      justify-content: center;
+      justify-content:flex-end;
       align-items: center;
       display: flex;
       flex-direction: column;
@@ -63,28 +63,28 @@
     .panel > * {
       margin: 0;
       width: 100%;
-      transition: transform 2.5s;
-      flex: 1 0 auto;
+      transition: transform 0.5s;
+      /* flex: 1 0 auto; */
       display: flex;
-      justify-content: center;
+      justify-content: right;
       align-items: flex-end;
 
     }
 
     .panel > *:first-child { transform: translateY(-100%); }
     .panel.open-active > *:first-child { transform: translateY(0); }
-    .panel > *:last-child { transform: translateY(100%) translateX(-100%); }
+    .panel > *:last-child { transform: translateY(100%); }
     .panel.open-active > *:last-child { transform: translateY(0) translateX(0); }
 
     .panel p {
       text-transform: uppercase;
       font-family: 'Helvetica';
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 2em;
+      /* text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45); */
+      font-size: 1em;
     }
 
     .panel p:nth-child(2) {
-      font-size: 4em;
+      font-size: 2em;
     }
 
     .panel.open {
@@ -97,29 +97,24 @@
 
   <div class="panels">
     <div class="panel panel1">
-      <!-- <p>Hey</p>
-      <p>Let's</p> -->
-      <p>Dance</p>
+      <p>Title</p>
+      <p>Photographer</p>
     </div>
     <div class="panel panel2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
+      <p>Title</p>
+      <p>Photographer</p>
     </div>
     <div class="panel panel3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
+      <p>Title</p>
+      <p>Photographer</p>
     </div>
     <div class="panel panel4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You can</p>
+      <p>Title</p>
+      <p>Photographer</p>
     </div>
     <div class="panel panel5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
+      <p>Title</p>
+      <p>Photographer</p>
     </div>
   </div>
 
