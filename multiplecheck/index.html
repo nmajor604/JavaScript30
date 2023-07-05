@@ -31,14 +31,18 @@
       border-bottom: 0;
     }
 
-    input:checked + p {
+    /* input:checked + p {
       background: #F9F9F9;
       text-decoration: line-through;
     }
 
+    input {
+      border: red 1px solid;
+    }
+
     input[type="checkbox"] {
       margin: 20px;
-    }
+    } */
 
     p {
       margin: 0;
@@ -54,6 +58,10 @@
     img {
       border: red solid 1px;
     }
+
+    img.clicked {
+      border: blue solid 1px;
+    }
   </style>
    <!--
    The following is a common layout you would see in an email client.
@@ -65,70 +73,70 @@
       <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
 
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
     <div class="item">
-      <input type="checkbox">
-      <img src="me.jpg" alt="Me At Whistler" width="100px" height="100px">
+      <!-- <input type="checkbox"> -->
+      <img src="Images/me.jpg" alt="Me At Whistler" width="100px" height="100px">
     </div>
   </div>
 
 <script>
 
-const checkboxes = document.querySelector('img');
+const images = document.querySelectorAll('.item');
 
-let lastChecked;
+let lastClicked;
 
-function handleCheck(e) {
+function handleClick(e) {
   // Check if they had the shift key down
   // AND check that they are checking it
   let inBetween = false;
-  if (e.shiftKey && this.checked) {
+  if (e.shiftKey && this.clicked) {
     // go ahead and do what we please
     // loop over every single checkbox
-    checkboxes.forEach(checkbox => {
-      console.log(checkbox);
-      if (checkbox === this || checkbox === lastChecked) {
+    images.forEach(image => {
+      console.log(image);
+      if (image === this || image === lastClicked) {
         inBetween = !inBetween;
         console.log('Starting to check them in between!');
       }
 
       if (inBetween) {
-        checkbox.checked = true;
+        image.clicked = true;
       }
     });
   }
 
-  lastChecked = this;
+  lastClicked = this;
 }
 
-checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+images.forEach(image => image.addEventListener('click', handleClick));
 </script>
 </body>
 </html>
