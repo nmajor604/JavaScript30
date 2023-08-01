@@ -59,7 +59,7 @@
       border: red solid 1px;
     }
 
-    img.clicked {
+    img {
       border: blue solid 1px;
     }
   </style>
@@ -113,27 +113,48 @@ const images = document.querySelectorAll('.item');
 
 let lastClicked;
 
+// function handleClick(e) {
+//   // Check if they had the shift key down
+//   // AND check that they are checking it
+//   let inBetween = false;
+//   if (e.shiftKey && this.clicked) {
+//     // go ahead and do what we please
+//     // loop over every single checkbox
+//     images.forEach(image => {
+//       console.log(image);
+//       if (image === this || image === lastClicked) {
+//         inBetween = !inBetween;
+//         console.log('Starting to check them in between!');
+//       }
+
+//       if (inBetween) {
+//         image.clicked = true;
+//       }
+//     });
+//   }
+
+//   lastClicked = this;
+// }
+
 function handleClick(e) {
-  // Check if they had the shift key down
-  // AND check that they are checking it
-  let inBetween = false;
+
+  let inBetween = false; 
+
   if (e.shiftKey && this.clicked) {
-    // go ahead and do what we please
-    // loop over every single checkbox
-    images.forEach(image => {
-      console.log(image);
-      if (image === this || image === lastClicked) {
+
+  images.forEach(image => {
+    console.log(image);
+    if (image === this || image === lastClicked) {
         inBetween = !inBetween;
         console.log('Starting to check them in between!');
       }
 
-      if (inBetween) {
+      if(inBetween) {
         image.clicked = true;
       }
-    });
-  }
-
-  lastClicked = this;
+  });
+}
+lastClicked = this;
 }
 
 images.forEach(image => image.addEventListener('click', handleClick));
